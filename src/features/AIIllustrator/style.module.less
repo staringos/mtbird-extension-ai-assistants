@@ -1,0 +1,65 @@
+.aiWrapper {
+  display: flex;
+  padding-top: 5px;
+
+  .paramsPanel {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid var(--gray-7);
+    padding-right: 10px;
+    height: 215px;
+    padding-top: 10px;
+
+    :global {
+      .ant-upload-list-item, .ant-upload-icon, .ant-upload-list-item-actions, .anticon, .ant-upload-list-item-name {
+        color: white !important;
+      }
+    }
+    
+    .img {
+      height: 38px;
+      background: url(https://mtbird-cdn.staringos.com/product/images/logo-ai-illustrator-write.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    textarea {
+      background: var(--gray-8);
+      color: var(--color-text-4);
+      border: 0;
+
+      &::placeholder {
+        color: var(--color-text-3);
+      }
+    }
+
+    .secondTitle {
+      color: var(--color-text-3);
+      font-size: 12px;
+      line-height: 16px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .generatedPanel {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    justify-content: space-around;
+
+    .imageCard {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 20px;
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .imageCardImage {
+      border-radius: 4px;
+    }
+  }
+}

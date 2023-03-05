@@ -1,0 +1,37 @@
+{
+  "name": "mtbird-extension-ai-assistants",
+  "version": "0.0.1",
+  "description": "星搭AI插画生成器",
+  "homepage": "",
+  "license": "MIT",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types",
+  "directories": {
+    "dist": "dist",
+    "test": "__tests__"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "start": "NODE_ENV=development mtbird start",
+    "build": "NODE_ENV=production mtbird build",
+    "publish": "NODE_ENV=production mtbird publish --token=changeTokenHere",
+    "lint": "yarn prettier --write .",
+    "link": "yarn link @mtbird/core & yarn link @mtbird/shared & yarn link @mtbird/cli & yarn link @mtbird/ui"
+  },
+  "dependencies": {
+    "@mtbird/ui": "^0.0.3-beta.45",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@mtbird/cli": "^0.0.3-beta.45",
+    "@mtbird/core": "^0.0.3-beta.45",
+    "@mtbird/shared": "^0.0.3-beta.45",
+    "@types/react": "^18.0.28",
+    "prettier": "^2.8.4",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}

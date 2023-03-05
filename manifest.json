@@ -1,0 +1,26 @@
+{
+  "name": "mtbird-extension-ai-assistants",
+  "title": "星搭AI助手",
+  "version": "0.0.1",
+  "desc": "星搭AI插画师、AI文案匠",
+  "tags": ["拓展案例"],
+  "contributes": {
+    "bottomTabs": [
+      {
+        "sort": 5,
+        "params": {
+          "name": "AI插画师"
+        },
+        "link": "feature",
+        "feature": "AIIllustrator.tab"
+      }, {
+        "sort": 6,
+        "params": {
+          "name": "AI文案匠"
+        },
+        "link": "feature",
+        "feature": "AICopywriter.tab"
+      }
+    ]
+  }
+}
