@@ -1,5 +1,24 @@
 import { IExtensionContext } from "@mtbird/shared";
 
+export const sendMessage = (
+  context: IExtensionContext,
+  msg: string,
+  messageId: string,
+  parentMessageId?: string
+) => {
+  return context.request.get(`${process.env.API_URL}/ai/generator/chat`, {
+    params: {
+      parentMessageId,
+      msg,
+      messageId,
+      teamId: context.storage.getItem("TSK"),
+    },
+    headers: {
+      Authorization: "Bears " + context.storage.getItem("AUTH_TOKEN"),
+    },
+  });
+};
+
 export const fetchAndUpload = (context: IExtensionContext, url: string) => {
   return context.request.post(
     `${process.env.API_URL}/upload/fetch`,
@@ -22,7 +41,6 @@ export const generateImage = (
   mode: string,
   image?: string
 ) => {
-  console.log("width:", width, height);
   const data = {
     width,
     height,
@@ -33,8 +51,6 @@ export const generateImage = (
   } else {
     data.prompt = prompt;
   }
-
-  console.log("1111111111data:", data);
 
   return context.request.post(
     `${process.env.API_URL}/ai/generator/image/${
