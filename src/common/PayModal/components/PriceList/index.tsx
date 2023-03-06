@@ -22,7 +22,7 @@ const PriceList = ({ title, desc, prices }: IProps) => {
               <Title level={5}>{cur.title}</Title>
               {cur.desc && <p>{cur.desc}</p>}
               <p>
-                金额: ¥<span className={styles.price}>{cur.price}</span>
+                金额: ¥ <span className={styles.price}>{cur.price}</span>
               </p>
               {cur.pre && <p>预计: {`${cur.pre}/${cur.unit}`}</p>}
               <p>调用次数: {cur.count}</p>

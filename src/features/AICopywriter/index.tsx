@@ -29,9 +29,9 @@ const AICopywriter = ({ context }: IExtensionFeatureProps) => {
       undefined;
     const messageMe = {
       content: msg,
-      avatar: onlineUserList[0].avatar as string,
+      avatar: onlineUserList?.[0]?.avatar as string,
       from: "me",
-      nickName: onlineUserList[0].nickname as string,
+      nickName: onlineUserList?.[0]?.nickname as string,
       messageId: generateKeys(),
       parentMessageId,
       conversationId,
@@ -122,7 +122,12 @@ const AICopywriter = ({ context }: IExtensionFeatureProps) => {
           />
         </div>
       </div>
-      <PayModal isOpen={isOpen} setIsOpen={setIsOpen} />
+      <PayModal
+        isOpen={isOpen}
+        onClose={() => {
+          setIsOpen(false);
+        }}
+      />
     </Spin>
   );
 };

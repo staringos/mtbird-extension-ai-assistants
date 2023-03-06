@@ -18,7 +18,9 @@ const MessageListView = ({ context, conversation }: IProps) => {
     <div className={styles.messageListWrapper}>
       <div className={styles.messageListContainer}>
         {curConv?.messages.map((cur: IMessage, i: number) => {
-          return <Message message={cur} isShare={false} key={i} />;
+          return (
+            <Message context={context} message={cur} isShare={false} key={i} />
+          );
         })}
       </div>
     </div>

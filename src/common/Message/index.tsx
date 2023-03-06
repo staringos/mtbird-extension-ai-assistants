@@ -1,14 +1,32 @@
 import React from "react";
-import { Avatar } from "antd";
+import { Avatar, Tooltip } from "antd";
 import { IMessage } from "types/message";
 import styles from "./style.module.less";
+import { IExtensionContext } from "@mtbird/shared/dist/types";
+import { COMPONENT } from "@mtbird/core";
 
 interface IProps {
   message: IMessage;
   isShare: boolean;
+  context: IExtensionContext;
 }
 
-const Message = ({ message, isShare }: IProps) => {
+const Message = ({ context, message, isShare }: IProps) => {
+  const handleAddComponent = () => {
+    context.addComponent({
+      type: "component",
+      componentName: "Text",
+      props: {
+        style: {
+          ...COMPONENT.COMPONENT_DEFAULT_STYLE,
+          height: 100,
+          width: 200,
+        },
+      },
+      children: `<p>${message.content}</p>`,
+    });
+  };
+
   return (
     <div
       id={`m${message.messageId}`}
@@ -41,7 +59,7 @@ const Message = ({ message, isShare }: IProps) => {
       <div className={styles.messageRight}>
         {!isShare &&
           (message.from === "them" ? (
-            <span className={styles.messageNickname}>ChatGPT</span>
+            <span className={styles.messageNickname}>ChatGPT </span>
           ) : (
             <span className={styles.messageNickname + " " + styles.right}>
               {message.nickName}
@@ -51,6 +69,14 @@ const Message = ({ message, isShare }: IProps) => {
           <div className={styles.messageContent}>
             <span>{message.content}</span>
           </div>
+          {message.from === "them" && (
+            <Tooltip placement="top" title="添加为文本组件">
+              <i
+                className={`mtbird-icon mtbird-plus-circle ${styles.addBtn}`}
+                onClick={handleAddComponent}
+              />
+            </Tooltip>
+          )}
         </div>
       </div>
     </div>
