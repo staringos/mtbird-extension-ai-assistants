@@ -1,7 +1,7 @@
 {
   "name": "mtbird-extension-ai-assistants",
   "title": "星搭AI助手",
-  "version": "0.0.1",
+  "version": "0.0.6",
   "desc": "星搭AI插画师、AI文案匠",
   "tags": ["拓展案例"],
   "contributes": {

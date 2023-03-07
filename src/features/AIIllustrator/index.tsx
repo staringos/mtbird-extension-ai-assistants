@@ -195,17 +195,13 @@ const AIIllustrator = ({ context }: IExtensionFeatureProps) => {
               <SchemaInput
                 placeholder="宽度"
                 value={width}
-                onChange={(e: any) =>
-                  isNumber(e.target.value) && setWidth(e.target.value)
-                }
+                onChange={(e: any) => isNumber(new Number(e)) && setWidth(e)}
               />
               <span style={{ color: "var(--color-text-4)" }}>x</span>
               <SchemaInput
                 placeholder="高度"
                 value={height}
-                onChange={(e: any) =>
-                  isNumber(e.target.value) && setHeight(e.target.value)
-                }
+                onChange={(e: any) => isNumber(new Number(e)) && setHeight(e)}
               />
               <Button size="small" type="primary" onClick={handleClick}>
                 生成

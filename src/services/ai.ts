@@ -9,7 +9,7 @@ export const sendMessage = (
   return context.request.get(`${process.env.API_URL}/ai/generator/chat`, {
     params: {
       parentMessageId,
-      msg,
+      msg: `${msg} | Please don't add any note nor explanation to the response.`,
       messageId,
       teamId: context.storage.getItem("TSK"),
     },
