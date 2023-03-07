@@ -1,9 +1,9 @@
 {
   "name": "mtbird-extension-ai-assistants",
   "version": "0.0.1",
-  "description": "星搭AI插画生成器",
+  "description": "星搭AI插画、文案生成插件",
   "homepage": "",
-  "license": "MIT",
+  "license": "AGPL-3.0",
   "main": "dist/index.umd.js",
   "module": "dist/index.esm.js",
   "types": "dist/types",
