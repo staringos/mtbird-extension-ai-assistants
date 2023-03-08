@@ -23,4 +23,4 @@ yarn run start
 
 ## 加入社群 & 需求定制
 
-![](https://raw.githubusercontent.com/staringos/staringai-mini-program/master/images/ew-qrcode.jpg)
+<img src="https://raw.githubusercontent.com/staringos/staringai-mini-program/master/images/ew-qrcode.jpg" width="150px" />
