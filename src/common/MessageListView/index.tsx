@@ -9,9 +9,16 @@ interface IProps {
   conversation: IConversation;
   isShare: boolean;
   context: IExtensionContext;
+  typingMessage?: string;
+  isLoading?: boolean;
 }
 
-const MessageListView = ({ context, conversation }: IProps) => {
+const MessageListView = ({
+  context,
+  conversation,
+  typingMessage,
+  isLoading,
+}: IProps) => {
   const curConv = conversation as IConversation;
 
   return (
@@ -22,6 +29,40 @@ const MessageListView = ({ context, conversation }: IProps) => {
             <Message context={context} message={cur} isShare={false} key={i} />
           );
         })}
+
+        {isLoading && (
+          <Message
+            context={context}
+            message={{
+              content: "思考中，请稍等...",
+              avatar: "",
+              from: "them",
+              nickName: "ChatGPT",
+              messageId: "Loading",
+              parentMessageId: "",
+              conversationId: "",
+            }}
+            isShare={false}
+            isTyping
+          />
+        )}
+
+        {typingMessage && (
+          <Message
+            context={context}
+            message={{
+              content: typingMessage,
+              avatar: "",
+              from: "them",
+              nickName: "ChatGPT",
+              messageId: "Loading",
+              parentMessageId: "",
+              conversationId: "",
+            }}
+            isShare={false}
+            isTyping
+          />
+        )}
       </div>
     </div>
   );

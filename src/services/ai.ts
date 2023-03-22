@@ -19,6 +19,17 @@ export const sendMessage = (
   });
 };
 
+export const getMessage = (context: IExtensionContext, id: string) => {
+  return context.request.get(`${process.env.API_URL}/ai/message`, {
+    params: {
+      id,
+    },
+    headers: {
+      Authorization: "Bears " + context.storage.getItem("AUTH_TOKEN"),
+    },
+  });
+};
+
 export const fetchAndUpload = (context: IExtensionContext, url: string) => {
   return context.request.post(
     `${process.env.API_URL}/upload/fetch`,

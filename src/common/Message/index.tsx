@@ -9,9 +9,10 @@ interface IProps {
   message: IMessage;
   isShare: boolean;
   context: IExtensionContext;
+  isTyping?: boolean;
 }
 
-const Message = ({ context, message, isShare }: IProps) => {
+const Message = ({ context, message, isShare, isTyping }: IProps) => {
   const handleAddComponent = () => {
     context.addComponent({
       type: "component",
@@ -68,6 +69,7 @@ const Message = ({ context, message, isShare }: IProps) => {
         <div className={styles.messageContentWrapper}>
           <div className={styles.messageContent}>
             <span>{message.content}</span>
+            {isTyping && <div className={styles.cursor}></div>}
           </div>
           {message.from === "them" && (
             <Tooltip placement="top" title="添加为文本组件">
