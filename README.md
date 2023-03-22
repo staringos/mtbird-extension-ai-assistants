@@ -1,4 +1,4 @@
-# 星搭人工智能助手拓展
+# 星搭AI智能助手插件
 
 星搭人工智能助手拓展，在[星搭低代码平台](https://staringos.com?f=mtbird-extension-ai-assistants)接入 Stable Diffusion 和 ChatGPT，帮助您一键生成文案和插画。详细了解可以参考 [这篇文章](https://mp.weixin.qq.com/s/Q99Y_SXdQxnZ1xWn0fQZVQ)
 
@@ -23,4 +23,4 @@ yarn run start
 
 ## 加入社群 & 需求定制
 
-![](https://github.com/staringos/staringai-mini-program/staringos/staringai-mini-program/raw/master/images/ew-qrcode.jpg)
+<img src="https://raw.githubusercontent.com/staringos/staringai-mini-program/master/images/ew-qrcode.jpg" width="150px" />
