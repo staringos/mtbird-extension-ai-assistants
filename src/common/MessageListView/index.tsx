@@ -43,7 +43,6 @@ const MessageListView = ({
               conversationId: "",
             }}
             isShare={false}
-            isTyping
           />
         )}
 

@@ -20,9 +20,7 @@ const AICopywriter = ({ context }: IExtensionFeatureProps) => {
   });
   const { onlineUserList } = context;
   const [msg, setMsg] = useState<string>("");
-  const [typingMessage, setTypingMessage] = useState<string | undefined>(
-    undefined
-  );
+  const [typingMessage, setTypingMessage] = useState<string | undefined>("");
 
   const handleSend = async () => {
     if (!msg || msg.trim().length === 0)
